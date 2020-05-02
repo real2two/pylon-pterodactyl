@@ -218,7 +218,7 @@ discord.registerEventHandler('MESSAGE_CREATE', async (message) => {
         fullcmd == 'power' ||
         fullcmd == 'send'
       ) {
-        if ((await kv.get('api_' + message.author.id)) || sharedapi == null) {
+        if ((await kv.get('api_' + message.author.id)) || sharedapi !== null) {
           if (sharedapi !== null) {
             var api = sharedapi;
           } else {
